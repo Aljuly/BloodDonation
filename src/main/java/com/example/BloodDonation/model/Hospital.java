@@ -3,12 +3,16 @@ package com.example.BloodDonation.model;
 import lombok.Data;
 
 import javax.persistence.*;
+
+import java.io.Serializable;
 import java.util.List;
 
 @Entity
 @Table(name = "Hospital")
 @Data
-public class Hospital {
+public class Hospital implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

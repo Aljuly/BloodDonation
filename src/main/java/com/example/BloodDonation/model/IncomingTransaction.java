@@ -4,12 +4,15 @@ import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+
+import java.io.Serializable;
 import java.util.Date;
 
 @Entity
 @Table(name = "IncomingTransaction")
 @Data
-public class IncomingTransaction {
+public class IncomingTransaction implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

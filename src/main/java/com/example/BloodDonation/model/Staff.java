@@ -2,12 +2,16 @@ package com.example.BloodDonation.model;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "Staff")
 @Data
-public class Staff {
+public class Staff implements Serializable  {
+
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -21,6 +25,9 @@ public class Staff {
     @JoinColumn(name="kod")
     private Hospital hospital;
 
+    @Column(name = "Password")
+    private String password;
+    
     @Column(name = "Address")
     private String address;
 

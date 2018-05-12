@@ -17,7 +17,7 @@ public class Donor {
     private Long kod;
 
     @Column(name = "DonorID")
-    private String staffId;
+    private String donorId;
 
     @Column(name = "Address")
     private String address;
