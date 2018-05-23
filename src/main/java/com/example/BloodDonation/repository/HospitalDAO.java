@@ -11,9 +11,11 @@ public interface HospitalDAO extends JpaRepository<Hospital, Long> {
     @Override
     List<Hospital> findAll();
     
-    Hospital findByHospitalId(String id);
+    Hospital findByHospitalId(Long id);
     
     @SuppressWarnings("unchecked")
     Hospital save(Hospital hospital);
-    
+
+    void deleteBykod(Long kod);
+
 }

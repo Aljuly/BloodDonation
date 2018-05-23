@@ -1,9 +1,9 @@
 package com.example.BloodDonation.model;
 
+
 import lombok.Data;
-
+import org.apache.commons.lang3.*;
 import javax.persistence.*;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -25,7 +25,6 @@ public class Hospital implements Serializable {
     @OneToMany(mappedBy = "OutgoingTransaction")
     private List<OutgoingTransaction> outgoingTransactions;
 
-    @Column(name = "HospitalID")
     private String hospitalId;
 
     @Column(name = "HospitalName")
@@ -36,5 +35,11 @@ public class Hospital implements Serializable {
 
     @Column(name = "HospitalRegion")
     private String hospitalRegion;
+
+    @Column(name = "HospitalID")
+    public String getHospitalId() {
+        this.hospitalId = "HS" + StringUtils.leftPad(Long.toString(this.kod),8, '0');
+        return this.hospitalId;
+    }
 
 }

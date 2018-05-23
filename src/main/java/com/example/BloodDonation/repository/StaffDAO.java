@@ -20,5 +20,7 @@ public interface StaffDAO extends JpaRepository<Staff, Long> {
     
     @SuppressWarnings("unchecked")
     Staff save(Staff staff);
+
+    void deleteBykod(Long id);
     
 }
