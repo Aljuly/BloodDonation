@@ -11,9 +11,9 @@
     <body>
         <sf:form method="post" action="deletehospital">
             <p style="color: black">hospital ID:<font color = "#FF0000">*</font>
-                <sf:input path="ishospital">&nbsp;
+                <sf:input path="ishospital"/>&nbsp;
             </p>
-            <h1><s:url href="/hospital" style="color: black">OK</a></h1>
+            <h1><s:url value="/hospital" />OK</h1>
             <p>
                 <input type="reset" value="Reset">
             </p>

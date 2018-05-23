@@ -8,8 +8,8 @@
     </head>
     <body>
         <div style="text-align: center">
-            <p><s:url href="/addhospital"    style="color: black" >Add hospital</a></p>
-            <p><s:url href="/findhospital"   style="color: black">Find hospital</a></p>
+            <p><s:url value ="/addhospital" />Add hospital</p>
+            <p><s:url value ="/findhospital" />Find hospital</p>
         </div>
     </body>
 </html>

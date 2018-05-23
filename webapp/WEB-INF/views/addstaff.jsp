@@ -13,23 +13,23 @@
             <p style="color: black">Enter new staff information. </p>
             <sf:form method="POST" commandName="Addstaff">
                 <p style="color: black">Staff ID:<font color = "#FF0000">*</font>
-                    <input type="text" path="staffId">&nbsp;
+                    <sf:input type="text" path="staffId"/>&nbsp;
                 </p>
-                <p style="color: black">HospitalID : <sf:input path="hospital.hospitalID">&nbsp;</p>
+                <p style="color: black">HospitalID : <sf:input path="hospital.hospitalID"/>&nbsp;</p>
                 <p style="color: white">Address : 
-                    <sf:input path="address">&nbsp;
-                    <sf:input path="city">&nbsp;
+                    <sf:input path="address"/>&nbsp;
+                    <sf:input path="city"/>&nbsp;
                 </p>
-                <p style="color: black">First name : <sf:input path="firstName">&nbsp;</p>
-                <p style="color: black">Last name : <sf:input path="lastName">&nbsp;</p>
-                <p style="color: black">contact : <sf:input path="contactPhone">&nbsp;</p>
+                <p style="color: black">First name : <sf:input path="firstName"/>&nbsp;</p>
+                <p style="color: black">Last name : <sf:input path="lastName"/>&nbsp;</p>
+                <p style="color: black">contact : <sf:input path="contactPhone"/>&nbsp;</p>
                 <p style="color: black">gender : 
                     <sf:select path="gender">
                         <option>M</option>
                         <option>F</option>
                     </sf:select>&nbsp;
                 </p>
-                <p style="color: black">IC number: <sf:input type="text" path="icNumber">&nbsp;</p>
+                <p style="color: black">IC number: <sf:input type="text" path="icNumber"/>&nbsp;</p>
                 <p> 
                     <input type="submit" name="Submit" value="Submit">
                     <input type="reset" value="Reset">
