@@ -13,28 +13,28 @@ public class HospitalController {
     @Autowired
     private HospitalDAO hospitalDAO;
 
+    @GetMapping("/findhospital")
+    public String showFindHospitalForm() {
+        return "findhospital";
+    }
+
+    @PostMapping("/hospitaldetail")
+    public String editHospital(@RequestParam String id, Model model) {
+        Hospital hospital = hospitalDAO.findBykod(Long.parseLong(id.substring(2)));
+        model.addAttribute(hospital);
+        return "hospitaldetail";
+    }
+
+    @PostMapping("/edithospital")
+    public String processHospital(@ModelAttribute Hospital hospital) {
+        hospitalDAO.save(hospital);
+        return "hospitaldetail";
+    }
+
     @GetMapping("/addhospital")
     public String showAddHospitalForm(Model model) {
         model.addAttribute("hospital", new Hospital());
-        return "Addhospital";
-    }
-
-    @PostMapping("/addhospital")
-    public String processHospital(@ModelAttribute Hospital hospital) {
-        hospitalDAO.save(hospital);
-        return "hospitaldetails";
-    }
-
-    @GetMapping("/deletehospital")
-    public String showDeleteHospitalForm() {
-        return "hindhospitaltodelete";
-    }
-
-    @PostMapping("/deletehospital")
-    public String showDeleteHospitalConformation(@RequestParam String id, Model model) {
-        Hospital hospital = hospitalDAO.findBykod(Long.parseLong(id.substring(2)));
-        model.addAttribute(hospital);
-        return "Deletehospital";
+        return "edithospital";
     }
 
     @PutMapping("/deletehospital")
@@ -42,7 +42,5 @@ public class HospitalController {
         hospitalDAO.deleteBykod(Long.parseLong(id.substring(2)));
         return "hospital";
     }
-
-
 
 }
